@@ -1,6 +1,4 @@
-
-
-.mainApp{
+.mainPage{
   display: grid;
   grid-template-columns: repeat(3,30vw);
   grid-template-areas: "header nav nav" 
@@ -9,6 +7,13 @@
   justify-content: center;
   justify-items: center;
   background-color: gray;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 200px;
+  gap: 20px;
 }
 
 Header{
