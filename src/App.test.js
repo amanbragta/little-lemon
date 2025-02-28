@@ -1,12 +1,23 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import BookingForm from "./components/BookingForm";
 
-test("renders the label in bookingform component", () => {
+test("check if button is enabled", () => {
   const dispatch = jest.fn();
+  const submitForm = jest.fn();
   const availableTimes = ["15:00"];
-  render(<BookingForm availableTimes={availableTimes} dispatch={dispatch} />);
-  const labelElement = screen.getByText("Choose date");
-  expect(labelElement).toBeInTheDocument();
+  render(
+    <BookingForm
+      availableTimes={availableTimes}
+      dispatch={dispatch}
+      submitForm={submitForm}
+    />
+  );
+  const labelElement = screen.getByTestId("date");
+  fireEvent.change(labelElement, { target: { value: "2025-02-01" } });
+  const button = screen.getByText("Make your reservation");
+  expect(button).not.toHaveAttribute("disabled");
+  fireEvent.click(button);
+  expect(submitForm).toHaveBeenCalled();
 });
 
 // const iniT = require("./initialiseTimes");

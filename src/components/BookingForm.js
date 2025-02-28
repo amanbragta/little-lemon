@@ -18,11 +18,13 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         type="date"
         id="date"
         name="date"
+        data-testid="date"
         value={form.date}
         onChange={(e) => {
           setForm({ ...form, date: e.target.value });
           dispatch({ type: e.target.value });
         }}
+        required
       />
       <label htmlFor="time">Choose time</label>
       <select
@@ -31,6 +33,7 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         onChange={(e) => {
           setForm({ ...form, time: e.target.value });
         }}
+        required
       >
         {availableTimes.map((item, index) => {
           return <option key={index}>{item}</option>;
@@ -60,7 +63,11 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make your reservation" />
+      <input
+        type="submit"
+        value="Make your reservation"
+        disabled={!form.date}
+      />
     </form>
   );
 }
