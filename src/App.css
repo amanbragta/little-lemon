@@ -1,18 +1,42 @@
-.mainPage{
-  display: grid;
-  grid-template-columns: repeat(3,30vw);
-  grid-template-areas: "header nav nav" 
-  "main main main" 
-  "footer footer footer";
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button{
+  background-color: rgb(210, 210, 71);
+  width: 200px;
+  height: 50px;
+  border-radius: 1rem;
+}
+
+button[type="submit"]{
+  cursor:pointer;
+}
+
+.navigation{
+  display: flex;
   justify-content: center;
-  justify-items: center;
-  background-color: gray;
+  gap: 10rem;
+}
+
+.booking_form{
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 form{
   display: grid;
   max-width: 200px;
   gap: 20px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+form button{
+  margin-top: 3rem;
 }
 
 Header{
@@ -31,11 +55,125 @@ nav > ul{
 
 Main{
   grid-area: main;
+  background-image: linear-gradient(to bottom,rgb(66, 97, 74) 70%,rgba(0,0,0,0) 20%);
 }
 
 Footer{
   grid-area: footer;
-  background-color: blue;
+  background-color: black;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: repeat(2,30vw);
+  justify-content: center;
+  color: white;
+}
+
+.hero h1{
+  color: rgb(175, 184, 11);
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.hero h2{
+  margin-top: 0;
+}
+
+.hero > figure img {
+  width: 300px;
+  height: 350px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.specials{
+  margin-top: 1rem;
+}
+
+.special-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+}
+
+.special-heading h2{
+  font-size: 2rem;
+}
+
+.special-cards{
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.card{
+  height: auto;
+  width: 250px;
+  background-color: rgb(237, 237, 237);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-details{
+  margin: .5rem 1rem .5rem 1rem;
+}
+
+.card-bottom{
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: small;
+}
+
+.card-heading{
+  margin-top: 0;
+}
+
+.price{
+  color: orange;
+}
+
+.card img{
+  width: inherit;
+  height: 250px;
+  object-fit: cover;
+}
+
+.footer-section{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 5rem;
+}
+
+.footer-section a{
+  color: white;
+}
+
+.footer-section h3{
+  margin-bottom: 0;
+}
+
+.footer-section ul{
+  list-style: none;
+  padding: 0;
+}
+
+.confirmed-booking{
+  margin-top: 2rem;
+  height: 75vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width:600px){

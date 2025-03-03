@@ -63,11 +63,9 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input
-        type="submit"
-        value="Make your reservation"
-        disabled={!form.date}
-      />
+      <button type="submit" disabled={!form.date}>
+        Make your reservation
+      </button>
     </form>
   );
 }

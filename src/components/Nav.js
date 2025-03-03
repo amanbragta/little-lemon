@@ -8,7 +8,7 @@ export default function Nav() {
           <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/booking"}>About</Link>
+          <Link to={"/"}>About</Link>
         </li>
         <li>
           <Link to={"/"}>Menu</Link>

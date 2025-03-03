@@ -4,6 +4,9 @@ import { Route, Routes, useNavigate } from "react-router";
 import BookingPage from "./pages/BookingPage";
 import { useReducer } from "react";
 import ConfirmedBooking from "./pages/ConfirmedBooking";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   const navigate = useNavigate();
@@ -49,20 +52,27 @@ function App() {
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   return (
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route
-        path="/booking"
-        element={
-          <BookingPage
-            time={availableTimes}
-            dispatch={dispatch}
-            form={submitForm}
-          />
-        }
-      />
-      <Route path="/confirmed" element={<ConfirmedBooking />} />
-    </Routes>
+    <>
+      <div className="navigation">
+        <Header />
+        <Nav />
+      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/booking"
+          element={
+            <BookingPage
+              time={availableTimes}
+              dispatch={dispatch}
+              form={submitForm}
+            />
+          }
+        />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
